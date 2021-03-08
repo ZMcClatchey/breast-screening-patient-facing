@@ -28,21 +28,32 @@
 
           <dl class="nhsuk-summary-list">
             
-            {% if data['language-preference'] != null %}
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Language preference</dt>
-              <dd class="nhsuk-summary-list__value">{{ data['language-preference'] }}</dd>
+              <dd class="nhsuk-summary-list__value">
+              {% if data['language-preference'] != null %}
+              {{ data['language-preference'] }}
+              {% else %}
+              No option selected
+              {% endif %}
+              </dd>
               <dd class="nhsuk-summary-list__actions"><a href="choose-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
             </div>
-            {% endif %}
+            
 
-            {% if data['format-preference'] != null %}
+            
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Formatting preference</dt>
-              <dd class="nhsuk-summary-list__value">{{ data['format-preference'] }}</dd>
+              <dd class="nhsuk-summary-list__value">
+              {% if data['format-preference'] != null %}
+              {{ data['format-preference'] }}
+              {% else %}
+              No option selected
+              {% endif %}
+              </dd>
               <dd class="nhsuk-summary-list__actions"><a href="choose-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
             </div>
-            {% endif %}
+            
 
 
           </dl>

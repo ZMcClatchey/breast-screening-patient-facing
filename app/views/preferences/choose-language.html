@@ -1,0 +1,119 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "index",
+  "text": "Back to managing your preferences"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-form-group">
+        <form action="choose-format" method="post">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Choose your language preference
+              </h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="chinese-simplified" name="language-preference" type="radio" value="chinese-simplified">
+                <label class="nhsuk-label nhsuk-radios__label" for="chinese-simplified">
+                  Chinese (Simplified)
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="chinese-traditional" name="language-preference" type="radio" value="chinese-traditional">
+                <label class="nhsuk-label nhsuk-radios__label" for="chinese-traditional">
+                  Chinese (Traditional)
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="english" name="language-preference" type="radio" value="english">
+                <label class="nhsuk-label nhsuk-radios__label" for="english">
+                  English
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="latvian" name="language-preference" type="radio" value="latvian">
+                <label class="nhsuk-label nhsuk-radios__label" for="latvian">
+                  Latvian
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="lithuanian" name="language-preference" type="radio" value="lithuanian">
+                <label class="nhsuk-label nhsuk-radios__label" for="lithuanian">
+                  Lithuanian
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="polish" name="language-preference" type="radio" value="polish">
+                <label class="nhsuk-label nhsuk-radios__label" for="polish">
+                  Polish
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="portuguese" name="language-preference" type="radio" value="portuguese">
+                <label class="nhsuk-label nhsuk-radios__label" for="portuguese">
+                  Portuguese
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="punjabi" name="language-preference" type="radio" value="punjabi">
+                <label class="nhsuk-label nhsuk-radios__label" for="punjabi">
+                  Punjabi
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="romanian" name="language-preference" type="radio" value="romanian">
+                <label class="nhsuk-label nhsuk-radios__label" for="romanian">
+                  Romanian
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="russian" name="language-preference" type="radio" value="russian">
+                <label class="nhsuk-label nhsuk-radios__label" for="russian">
+                  Russian
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="urdu" name="language-preference" type="radio" value="urdu">
+                <label class="nhsuk-label nhsuk-radios__label" for="urdu">
+                  Urdu
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

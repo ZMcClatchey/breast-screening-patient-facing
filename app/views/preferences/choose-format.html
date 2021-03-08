@@ -1,0 +1,64 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "choose-language",
+  "text": "Back to choosing your language preference"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-form-group">
+        <form action="review-preferences" method="post">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Choose the format for the information
+              </h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="braille" name="format-preference" type="radio" value="braille">
+                <label class="nhsuk-label nhsuk-radios__label" for="braille">
+                  Braille
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="easy-read" name="format-preference" type="radio" value="easy-read">
+                <label class="nhsuk-label nhsuk-radios__label" for="easy-read">
+                  Easy read format
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="no-preference" name="format-preference" type="radio" value="no-preference">
+                <label class="nhsuk-label nhsuk-radios__label" for="no-preference">
+                  No preference
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

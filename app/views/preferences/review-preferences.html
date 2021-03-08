@@ -1,0 +1,62 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "choose-format",
+  "text": "Back to choosing your format preference"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-form-group">
+        <form action="confirm-preferences" method="post">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Review your chosen preferences
+              </h1>
+            </legend>
+
+          <dl class="nhsuk-summary-list">
+            
+            {% if data['language-preference'] != null %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Language preference</dt>
+              <dd class="nhsuk-summary-list__value">{{ data['language-preference'] }}</dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
+            </div>
+            {% endif %}
+
+            {% if data['format-preference'] != null %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Formatting preference</dt>
+              <dd class="nhsuk-summary-list__value">{{ data['format-preference'] }}</dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
+            </div>
+            {% endif %}
+
+
+          </dl>
+
+
+          </fieldset>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,50 +1,39 @@
-<!-- Use this page as the index for your project -->
 
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title -->
 {% block pageTitle %}
-  Breast screening patient facing
+  Manage your preferences for breast screening
 {% endblock %}
 
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-{% endblock %}
-
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-{% endblock %}
-
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Amber {{version}}</span>
-      </h1>
+      <h1>Manage your NHS breast screening preferences</h1>
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
-      </p>
-
+      <p>Use this service to choose:</p>
+      <ul>
+        <li>how you're contacted about breast screening services</li>
+        <li>what language and format you get information in</li>
+        <li>any access needs or appointment adjustments you need</li>
+        <li>your pronouns</li>
+        <li>languages preferences</li>
+      </ul>
       
+      <a href="https://www.nhs.uk/conditions/breast-cancer-screening/" class="nhsuk-link">Find out more about NHS breast screening</a>
+      <br><br>
+
+      <h2>Before you start</h2>
+      <p>This service uses NHS login. It is a new way to log in to health websites and apps.</p>
+      <p>To set up an NHS login you need:</p>
+      <ul>
+        <li>an email address</li>
+        <li>a UK mobile phone numbeer</li>
+      </ul>
+
+      <!--- NHS login button -->
+      <a href="#"><button class="nhsuk-button" type="submit">Filler button for Login</button></a>
+
 
     </div>
   </div>

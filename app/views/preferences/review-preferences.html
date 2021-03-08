@@ -8,10 +8,25 @@
 
 {% block content %}
 
+<!-- For each page that appears directly before this review page
+I've added a name and value to the submit buttons so it'll change the backlink
+and information displayed here accordingly.
+
+If it's too complex - we can just do individual review/summary pages. -->
+
+{% if data['preference-type'] == ['choose-format'] %}
 {{ backLink({
   "href": "choose-format",
   "text": "Back to choosing your format preference"
 }) }}
+{% endif %}
+
+{% if data['preference-type'] == ['choose-pronouns'] %}
+{{ backLink({
+  "href": "choose-your-pronouns",
+  "text": "Back to choosing your pronouns"
+}) }}
+{% endif %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -28,32 +43,37 @@
 
           <dl class="nhsuk-summary-list">
             
+            {% if data['preference-type'] == ['choose-format'] %}
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Language preference</dt>
               <dd class="nhsuk-summary-list__value">
-              {% if data['language-preference'] != null %}
-              {{ data['language-preference'] }}
-              {% else %}
-              No option selected
-              {% endif %}
+              {{ data['language-preference'] or 'No option selected'}}
               </dd>
               <dd class="nhsuk-summary-list__actions"><a href="choose-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
             </div>
             
-
-            
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Formatting preference</dt>
               <dd class="nhsuk-summary-list__value">
-              {% if data['format-preference'] != null %}
-              {{ data['format-preference'] }}
-              {% else %}
-              No option selected
-              {% endif %}
+              {{ data['format-preference'] or 'No option selected'}}
               </dd>
               <dd class="nhsuk-summary-list__actions"><a href="choose-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
             </div>
-            
+            {% endif %}
+
+            {% if data['preference-type'] == ['choose-pronouns'] %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Pronouns</dt>
+              <dd class="nhsuk-summary-list__value">
+              {% if data['pronouns'] != ['something-else'] %}
+              {{ data['pronouns'] }}
+              {% else %}
+              {{ data['other-pronouns'] or 'No option selected' }}
+              {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-your-pronouns">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
+            </div>            
+            {% endif %}
 
 
           </dl>

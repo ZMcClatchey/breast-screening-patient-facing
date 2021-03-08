@@ -1,0 +1,92 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "index",
+  "text": "Back to managing your preferences"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-form-group">
+        <form action="review-preferences" method="post">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                What pronouns do you use?
+              </h1>
+            </legend>
+
+            <div class="nhsuk-hint">
+              This helps us understand the best way to address you
+            </div>
+
+            <div class="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="she-her" name="pronouns" type="radio" value="She/her">
+                <label class="nhsuk-label nhsuk-radios__label" for="she-her">
+                  She/her
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="he-him" name="pronouns" type="radio" value="He/him">
+                <label class="nhsuk-label nhsuk-radios__label" for="he-him">
+                  He/him
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="they-them" name="pronouns" type="radio" value="They/them">
+                <label class="nhsuk-label nhsuk-radios__label" for="they-them">
+                  They/them
+                </label>
+              </div>
+                            
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="prefer-not" name="pronouns" type="radio" value="Prefer not to say">
+                <label class="nhsuk-label nhsuk-radios__label" for="prefer-not">
+                  Prefer not to say
+                </label>
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="something-else" name="pronouns" type="radio" value="something-else" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="something-else">
+                    Something else
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-pronouns">
+                      <span class="nhsuk-u-visually-hidden">Preferred pronuons</span>
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="other-pronouns" name="other-pronouns" type="text">
+                  </div>
+                </div>
+              </div>
+
+          </fieldset>
+
+          <button name="preference-type" value="choose-pronouns" class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

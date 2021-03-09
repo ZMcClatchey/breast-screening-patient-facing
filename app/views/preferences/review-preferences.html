@@ -49,7 +49,7 @@ If it's too complex - we can just do individual review/summary pages. -->
               <dd class="nhsuk-summary-list__value">
               {{ data['language-preference'] or 'No option selected'}}
               </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-your-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
             </div>
             
             <div class="nhsuk-summary-list__row">
@@ -57,7 +57,7 @@ If it's too complex - we can just do individual review/summary pages. -->
               <dd class="nhsuk-summary-list__value">
               {{ data['format-preference'] or 'No option selected'}}
               </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-your-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
             </div>
             {% endif %}
 
@@ -74,6 +74,17 @@ If it's too complex - we can just do individual review/summary pages. -->
               <dd class="nhsuk-summary-list__actions"><a href="choose-your-pronouns">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
             </div>            
             {% endif %}
+
+            {% if data['preference-type'] == ['choose-words'] %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Word or phrase preferences</dt>
+              <dd class="nhsuk-summary-list__value">
+              {{ data['word-preference'] or 'No text entered' }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions"><a href="choose-your-words">Change<span class="nhsuk-u-visually-hidden">word preference</span></a></dd>
+            </div>            
+            {% endif %}
+
 
 
           </dl>

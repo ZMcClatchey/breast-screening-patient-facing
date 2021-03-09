@@ -1,0 +1,46 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "index",
+  "text": "Back to managing your preferences"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-form-group">
+        <form action="review-preferences" method="post">
+
+          <h1 class="nhsuk-heading-l">Are there any words or phrases you would like us not to use?</h1>
+
+          <p>To help us plan properly for your appointment, tell us if there are any words or phrases you would prefer us not to use</p>
+
+          <label class="nhsuk-label" for="word-preference">
+            <span class="nhsuk-u-visually-hidden">Can you provide more detail?</span>
+          </label>
+
+          <div class="nhsuk-hint">
+            For example, use the word chest instead of breast</div>
+          <textarea class="nhsuk-textarea" name="word-preference" rows="5" aria-describedby="word-preference"></textarea>
+
+
+          </fieldset>
+
+          <button name="preference-type" value="choose-words" class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,110 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Manage your preferences for breast screening
+{% endblock %}
+
+{% block pageScripts %}
+<!-- <style>
+.onboarding-contents {
+  height:100%;
+  width:100%;
+  @include mq($from: tablet) {
+    width: 375px;
+    height: auto;
+  }
+}
+.onboarding-contents button {
+  margin-top:30px;
+  margin-bottom: 24px;
+  width:100%;
+}
+.onboarding-button {
+  border:none;
+  background:none;
+}
+.desktop-button {
+    border:none;
+    background:none;
+}
+</style> -->
+
+<style>
+.nhsuk-login {
+  background-color:#005eb8;
+}
+</style> 
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+<div class="nhsuk-form-group">
+
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        How would you like to be contacted?
+      </h1>
+    </legend>
+      
+  <div class="nhsuk-hint" id="example-hint">
+      Select all options that are relevant to you.
+    </div>
+
+    <div class="nhsuk-checkboxes">
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact-email" name="contact-email" type="checkbox" value="email">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+          Email
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact-letter" name="contact-letter" type="checkbox" value="phone">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+          Letter
+        </label>
+      </div>
+
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact-text" name="contact-text" type="checkbox" value="text message">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+          Text message
+        </label>
+      </div>
+
+       <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="contact-app" name="contact-app" type="checkbox" value="text message">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+          App notifications
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+<br>
+  <p>We may need to send letteres to you. They will be send to the address you are registered with at the GP surgery.</p>
+
+<button class="nhsuk-button" type="submit">
+  Continue
+</button>
+
+</div>
+      
+     
+      
+      
+      
+      
+
+  
+
+
+    </div>
+  </div>
+{% endblock %}

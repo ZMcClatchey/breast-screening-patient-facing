@@ -6369,3 +6369,24 @@ b {
     .nhsuk-related-nav__list {
       font-size: 14pt;
       line-height: 1.2; } }
+
+.nhsuk-loader__container {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+
+.nhsuk-loader {
+  pointer-events: none;
+  width: 2.5em;
+  height: 2.5em;
+  border: 0.4em solid transparent;
+  border-color: #eee;
+  border-top-color: #3E67EC;
+  border-radius: 50%;
+  animation: loadingspin 1s linear infinite;
+  display: flex;
+  justify-content: center; }
+
+@keyframes loadingspin {
+  100% {
+    transform: rotate(360deg); } }

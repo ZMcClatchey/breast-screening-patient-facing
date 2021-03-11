@@ -17,21 +17,28 @@ If it's too complex - we can just do individual review/summary pages. -->
 {% if data['preference-type'] == ['choose-format'] %}
 {{ backLink({
   "href": "choose-your-format",
-  "text": "Back to choosing your format preference"
+  "text": "back to choosing your format preference"
 }) }}
 {% endif %}
 
 {% if data['preference-type'] == ['choose-pronouns'] %}
 {{ backLink({
   "href": "choose-your-pronouns",
-  "text": "Back to choosing your pronouns"
+  "text": "back to choosing your pronouns"
+}) }}
+{% endif %}
+
+{% if data['preference-type'] == ['contact-preferences'] %}
+{{ backLink({
+  "href": "contact-preferences",
+  "text": "back to contact preferences"
 }) }}
 {% endif %}
 
 {% if data['preference-type'] == ['access-needs'] %}
 {{ backLink({
   "href": "appointment-access-needs",
-  "text": "Back to access needs"
+  "text": "back to access needs"
 }) }}
 {% endif %}
 
@@ -86,7 +93,11 @@ If it's too complex - we can just do individual review/summary pages. -->
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Contact preferences</dt>
                 <dd class="nhsuk-summary-list__value">
-                {{ data['contact-preferences'] }}
+                <ul>
+                  {% for contactPreferences in data['contact-preferences'] %}
+                    <li>{{ contactPreferences }}</li>
+                  {% endfor %}
+                  </ul>
                 </dd>
                 <dd class="nhsuk-summary-list__actions"><a href="contact-preferences">Change<span class="nhsuk-u-visually-hidden">Contact preference</span></a></dd>
               </div>            

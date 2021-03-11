@@ -81,6 +81,16 @@ If it's too complex - we can just do individual review/summary pages. -->
                 <dd class="nhsuk-summary-list__actions"><a href="choose-your-pronouns">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
               </div>            
             {% endif %}
+            
+             {% if data['preference-type'] == ['contact-preferences'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Contact preferences</dt>
+                <dd class="nhsuk-summary-list__value">
+                {{ data['contact-preferences'] }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="contact-preferences">Change<span class="nhsuk-u-visually-hidden">Contact preference</span></a></dd>
+              </div>            
+            {% endif %}
 
             {% if data['preference-type'] == ['choose-words'] %}
               <div class="nhsuk-summary-list__row">

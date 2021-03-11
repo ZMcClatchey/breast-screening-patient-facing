@@ -28,6 +28,13 @@ If it's too complex - we can just do individual review/summary pages. -->
 }) }}
 {% endif %}
 
+{% if data['preference-type'] == ['access-needs'] %}
+{{ backLink({
+  "href": "appointment-access-needs",
+  "text": "Back to access needs"
+}) }}
+{% endif %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -44,45 +51,80 @@ If it's too complex - we can just do individual review/summary pages. -->
           <dl class="nhsuk-summary-list">
             
             {% if data['preference-type'] == ['choose-format'] %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Language preference</dt>
-              <dd class="nhsuk-summary-list__value">
-              {{ data['language-preference'] or 'No option selected'}}
-              </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-your-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
-            </div>
-            
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Formatting preference</dt>
-              <dd class="nhsuk-summary-list__value">
-              {{ data['format-preference'] or 'No option selected'}}
-              </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-your-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
-            </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Language preference</dt>
+                <dd class="nhsuk-summary-list__value">
+                {{ data['language-preference'] or 'No option selected'}}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="choose-your-language">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Formatting preference</dt>
+                <dd class="nhsuk-summary-list__value">
+                {{ data['format-preference'] or 'No option selected'}}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="choose-your-format">Change<span class="nhsuk-u-visually-hidden">formatting preference</span></a></dd>
+              </div>
             {% endif %}
 
             {% if data['preference-type'] == ['choose-pronouns'] %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Pronouns</dt>
-              <dd class="nhsuk-summary-list__value">
-              {% if data['pronouns'] != ['something-else'] %}
-              {{ data['pronouns'] }}
-              {% else %}
-              {{ data['other-pronouns'] or 'No option selected' }}
-              {% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-your-pronouns">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
-            </div>            
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Pronouns</dt>
+                <dd class="nhsuk-summary-list__value">
+                {% if data['pronouns'] != ['something-else'] %}
+                {{ data['pronouns'] }}
+                {% else %}
+                {{ data['other-pronouns'] or 'No option selected' }}
+                {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="choose-your-pronouns">Change<span class="nhsuk-u-visually-hidden">language preference</span></a></dd>
+              </div>            
+            {% endif %}
+            
+             {% if data['preference-type'] == ['contact-preferences'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Contact preferences</dt>
+                <dd class="nhsuk-summary-list__value">
+                {{ data['contact-preferences'] }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="contact-preferences">Change<span class="nhsuk-u-visually-hidden">Contact preference</span></a></dd>
+              </div>            
             {% endif %}
 
             {% if data['preference-type'] == ['choose-words'] %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Word or phrase preferences</dt>
-              <dd class="nhsuk-summary-list__value">
-              {{ data['word-preference'] or 'No text entered' }}
-              </dd>
-              <dd class="nhsuk-summary-list__actions"><a href="choose-your-words">Change<span class="nhsuk-u-visually-hidden">word preference</span></a></dd>
-            </div>            
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Word or phrase preferences</dt>
+                <dd class="nhsuk-summary-list__value">
+                {{ data['word-preference'] or 'No text entered' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="choose-your-words">Change<span class="nhsuk-u-visually-hidden">word preference</span></a></dd>
+              </div>            
+            {% endif %}
+
+            {% if data['preference-type'] == 'access-needs' %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Appointment adjustments</dt>
+                <dd class="nhsuk-summary-list__value">
+                  <ul>
+                  {% for adjustment in data['adjustments'] %}
+                    <li>{{ adjustment }}</li>
+                  {% endfor %}
+                  </ul>
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="appointment-adjustments">Change<span class="nhsuk-u-visually-hidden">word preference</span></a></dd>
+              </div>  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Access needs</dt>
+                <dd class="nhsuk-summary-list__value">
+                  <ul>
+                    {% for accessNeed in data['access-needs'] %}
+                      <li>{{ accessNeed }}</li>
+                    {% endfor %}
+                  </ul>
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="appointment-access-needs">Change<span class="nhsuk-u-visually-hidden">word preference</span></a></dd>
+              </div>            
             {% endif %}
 
 

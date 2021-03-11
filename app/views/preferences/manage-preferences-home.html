@@ -6,38 +6,33 @@
 {% endblock %}
 
 {% block pageScripts %}
-<!-- <style>
-.onboarding-contents {
-  height:100%;
-  width:100%;
-  @include mq($from: tablet) {
-    width: 375px;
-    height: auto;
-  }
-}
-.onboarding-contents button {
-  margin-top:30px;
-  margin-bottom: 24px;
-  width:100%;
-}
-.onboarding-button {
-  border:none;
-  background:none;
-}
-.desktop-button {
-    border:none;
-    background:none;
-}
-</style> -->
-
-<style>
-.nhsuk-login {
-  background-color:#005eb8;
-}
-</style> 
-
 {% endblock %}
 
+{% block header %}
+<header class="nhsuk-header nhsuk-header--transactional" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link" href="/" aria-label="NHS homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+      </a>
+    </div>
+    <div class="nhsuk-header__transactional-service-name">
+      <a class="nhsuk-header__transactional-service-name--link" href="https://beta.nhs.uk/book-a-gp-appointment/">Breast screening</a>
+    </div>
+    <div class="nhsuk-header__content" id="content-header">
+      <div class="nhsuk-header__menu">
+        <form action="index" method="post">
+          <button class="nhsuk-header__menu-toggle" style="display: block; padding: 3px 8px" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Log out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
+ 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -48,20 +43,18 @@
     <h2>Information</h2>
       <p>You chose information in:</p>
       <ul>
-        <li>Easy read formate</li> <!-- needs to be populated from other pages-->
+        <li>Easy read format</li> <!-- needs to be populated from other pages-->
         <li>Welsh</li>
       </ul>
-      <a href="choose-your-format" class="nhsuk-link">Change your infomration needs</a>
-      <br><br>
-    
+      <p><a href="choose-your-language" class="nhsuk-link">Change your information needs</a></p>
+
     <h2>Contact preferences</h2>
       <p>You chose to be contacted by:</p>
       <ul>
         <li>Email</li> <!-- needs to be populated from other pages-->
         <li>Text message</li>
       </ul>
-      <a href="contact-preferences" class="nhsuk-link">Change your contact preferences</a>
-      <br><br>
+      <p><a href="contact-preferences" class="nhsuk-link">Change your contact preferences</a></p>
 
     <h2>Appointment needs</h2>
      <p>You told us you:</p>
@@ -70,24 +63,21 @@
         <li>need disable car parking</li>
         <li>need step free access</li>
       </ul>
-      <a href="appointment-access-needs" class="nhsuk-link">Change your appointment needs</a>
-      <br><br>
+      <p><a href="appointment-adjustments" class="nhsuk-link">Change your appointment needs</a></p>
 
     <h2>Pronouns</h2>
       <p>You chose:</p>
       <ul>
         <li>They/them pronouns</li> <!-- needs to be populated from other pages-->
       </ul>
-       <a href="choose-your-pronouns" class="nhsuk-link">Change your pronouns</a>
-      <br><br>
+      <p><a href="choose-your-pronouns" class="nhsuk-link">Change your pronouns</a></p>
 
     <h2>Language preferences</h2>
       <p>You told us you:</p>
       <ul>
         <li>Please use chest instead of breast when talking about screening and don't use the phrase 'it will be over soon'.</li> <!-- needs to be populated from other pages-->
       </ul>
-      <a href="choose-your-language" class="nhsuk-link">Change your language preferences</a>
-      <br>
+      <p><a href="choose-your-words" class="nhsuk-link">Change your language preferences</a></p>
      
       
       

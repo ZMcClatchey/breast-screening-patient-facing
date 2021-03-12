@@ -2249,7 +2249,7 @@ b {
  * 3. Use a pseudo element to expand the click target area to include the
  *    button's shadow as well, in case users try to click it.
  */
-.nhsuk-button {
+.nhsuk-button, .nhsuk-login-test {
   font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
@@ -2275,43 +2275,43 @@ b {
   /* 3 */
   /* 4 */ }
   @media (min-width: 40.0625em) {
-    .nhsuk-button {
+    .nhsuk-button, .nhsuk-login-test {
       font-size: 19px;
       font-size: 1.1875rem;
       line-height: 1.47368; } }
   @media print {
-    .nhsuk-button {
+    .nhsuk-button, .nhsuk-login-test {
       font-size: 14pt;
       line-height: 1.15; } }
   @media (min-width: 40.0625em) {
-    .nhsuk-button {
+    .nhsuk-button, .nhsuk-login-test {
       margin-bottom: 36px; } }
   @media (max-width: 40.0525em) {
-    .nhsuk-button {
+    .nhsuk-button, .nhsuk-login-test {
       padding: 8px 16px; } }
-  .nhsuk-button:link, .nhsuk-button:visited, .nhsuk-button:active, .nhsuk-button:hover {
+  .nhsuk-button:link, .nhsuk-login-test:link, .nhsuk-button:visited, .nhsuk-login-test:visited, .nhsuk-button:active, .nhsuk-login-test:active, .nhsuk-button:hover, .nhsuk-login-test:hover {
     color: #ffffff;
     text-decoration: none; }
-  .nhsuk-button::-moz-focus-inner {
+  .nhsuk-button::-moz-focus-inner, .nhsuk-login-test::-moz-focus-inner {
     border: 0;
     padding: 0; }
-  .nhsuk-button:hover {
+  .nhsuk-button:hover, .nhsuk-login-test:hover {
     background-color: #00662f; }
-  .nhsuk-button:focus {
+  .nhsuk-button:focus, .nhsuk-login-test:focus {
     background: #ffeb3b;
     box-shadow: 0 4px 0 #212b32;
     color: #212b32;
     outline: 4px solid transparent; }
-    .nhsuk-button:focus:visited {
+    .nhsuk-button:focus:visited, .nhsuk-login-test:focus:visited {
       color: #212b32; }
-      .nhsuk-button:focus:visited:active {
+      .nhsuk-button:focus:visited:active, .nhsuk-login-test:focus:visited:active {
         color: #ffffff; }
-  .nhsuk-button:active {
+  .nhsuk-button:active, .nhsuk-login-test:active {
     background: #00401e;
     box-shadow: none;
     color: #ffffff;
     top: 4px; }
-  .nhsuk-button::before {
+  .nhsuk-button::before, .nhsuk-login-test::before {
     background: transparent;
     bottom: -6px;
     content: '';
@@ -2320,7 +2320,7 @@ b {
     position: absolute;
     right: -2px;
     top: -2px; }
-  .nhsuk-button:active::before {
+  .nhsuk-button:active::before, .nhsuk-login-test:active::before {
     top: -6px; }
 
 /**
@@ -2375,23 +2375,31 @@ b {
  */
 .nhsuk-button--disabled,
 .nhsuk-button[disabled="disabled"],
-.nhsuk-button[disabled] {
+.nhsuk-login-test[disabled="disabled"],
+.nhsuk-button[disabled],
+.nhsuk-login-test[disabled] {
   background-color: #007f3b;
   opacity: 0.5;
   pointer-events: none; }
   .nhsuk-button--disabled:hover,
   .nhsuk-button[disabled="disabled"]:hover,
-  .nhsuk-button[disabled]:hover {
+  .nhsuk-login-test[disabled="disabled"]:hover,
+  .nhsuk-button[disabled]:hover,
+  .nhsuk-login-test[disabled]:hover {
     background-color: #007f3b;
     cursor: default; }
   .nhsuk-button--disabled:focus,
   .nhsuk-button[disabled="disabled"]:focus,
-  .nhsuk-button[disabled]:focus {
+  .nhsuk-login-test[disabled="disabled"]:focus,
+  .nhsuk-button[disabled]:focus,
+  .nhsuk-login-test[disabled]:focus {
     background-color: #007f3b;
     outline: none; }
   .nhsuk-button--disabled:active,
   .nhsuk-button[disabled="disabled"]:active,
-  .nhsuk-button[disabled]:active {
+  .nhsuk-login-test[disabled="disabled"]:active,
+  .nhsuk-button[disabled]:active,
+  .nhsuk-login-test[disabled]:active {
     box-shadow: 0 4px 0 #00401e;
     top: 0; }
 
@@ -2430,7 +2438,7 @@ b {
 /**
  * IE8 fix for focus styles
  */
-.ie8 .nhsuk-button:focus {
+.ie8 .nhsuk-button:focus, .ie8 .nhsuk-login-test:focus {
   outline: 1px dotted #212b32; }
 
 /* ==========================================================================
@@ -6390,3 +6398,15 @@ b {
 @keyframes loadingspin {
   100% {
     transform: rotate(360deg); } }
+
+.nhsuk-login-test {
+  width: 300px;
+  background-color: #005eb8;
+  box-shadow: 0 4px 0 #002f5c; }
+  .nhsuk-login-test:hover, .nhsuk-login-test:active {
+    background-color: #004A91; }
+  .nhsuk-login-test:focus {
+    box-shadow: 0 0 0 4px #ffb81c;
+    outline: 4px solid transparent;
+    outline-offset: 4px;
+    background-color: #005eb8; }

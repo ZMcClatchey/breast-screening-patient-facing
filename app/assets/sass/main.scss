@@ -33,3 +33,26 @@
 			transform: rotate(360deg)
 	}
 }
+
+// Test NHS login button update
+.nhsuk-login-test {
+    @extend .nhsuk-button;
+    width: 300px;
+    background-color:#005eb8;
+    box-shadow: 0 4px 0 #002f5c;
+    
+    &:hover,
+    &:active {
+        background-color:#004A91;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px #ffb81c;
+        outline: 4px solid transparent;
+        outline-offset: 4px;
+        background-color:#005eb8;
+      }
+      
+}
+
+

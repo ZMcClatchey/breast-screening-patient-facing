@@ -46,4 +46,10 @@ router.post("/store-needs/", function (req, res) {
     res.redirect('/preferences/review-preferences');
 })
 
+router.post("/reset-data/", function (req, res) {
+    req.session.data = {};
+
+    res.redirect('/preferences/index');
+})
+
 module.exports = router;

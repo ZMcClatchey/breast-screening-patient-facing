@@ -39,54 +39,67 @@
 
       <h1>Manage your NHS breast screening preferences</h1>
 
-
-    <h2>Information</h2>
-      <p>You chose information in:</p>
-      <ul>
-        <li>Easy read format</li> <!-- needs to be populated from other pages-->
-        <li>Welsh</li>
-      </ul>
+      <h2>Information</h2>
+      {% if data['language-preference'] != null and data['format-preference'] != null %}
+        <p>You chose information in:</p>
+        <ul>
+          <li>{{ data['language-preference'] or 'No option selected'}}</li>
+          <li>{{ data['format-preference'] or 'No option selected'}}</li>
+        </ul>
+      {% else %}
+        <p>You have not set any information needs</p>
+      {% endif %}
       <p><a href="choose-your-language" class="nhsuk-link">Change your information needs</a></p>
 
-    <h2>Contact preferences</h2>
-      <p>You chose to be contacted by:</p>
+      <h2>Contact preferences</h2>
+      {% if data['contact-preferences'] != null %}
+        <p>You chose to be contacted by:</p>
+      {% else %}
+        <p>You have not set any contact preferences</p>
+      {% endif %}
       <ul>
-        <li>Email</li> <!-- needs to be populated from other pages-->
-        <li>Text message</li>
+        {% for contactPreferences in data['contact-preferences'] %}
+          <li>{{ contactPreferences }}</li>
+        {% endfor %}
       </ul>
       <p><a href="contact-preferences" class="nhsuk-link">Change your contact preferences</a></p>
 
-    <h2>Appointment needs</h2>
-     <p>You told us you:</p>
+      <h2>Appointment needs</h2>
+      {% if data['contact-preferences'] != null %}
+        <p>You told us you:</p>
+      {% else %}
+        <p>You have not set any appointment needs</p>
+      {% endif %} 
       <ul>
-        <li>Have a learning disability</li> <!-- needs to be populated from other pages-->
-        <li>need disable car parking</li>
-        <li>need step free access</li>
+        {% for adjustment in data['adjustments'] %}
+          <li>{{ adjustment }}</li>
+        {% endfor %}
+        {% for accessNeed in data['access-needs'] %}
+          <li>{{ accessNeed }}</li>
+        {% endfor %}
       </ul>
       <p><a href="appointment-adjustments" class="nhsuk-link">Change your appointment needs</a></p>
 
-    <h2>Pronouns</h2>
-      <p>You chose:</p>
-      <ul>
-        <li>They/them pronouns</li> <!-- needs to be populated from other pages-->
-      </ul>
+      <h2>Pronouns</h2>
+      {% if data['pronouns'] != null %}
+        <p>You chose:</p>
+        <ul>
+          {{ data['pronouns'] }}
+        </ul>
+      {% else %}
+        <p>You have not set any pronouns</p>
+      {% endif %}
       <p><a href="choose-your-pronouns" class="nhsuk-link">Change your pronouns</a></p>
 
-    <h2>Language preferences</h2>
-      <p>You told us you:</p>
-      <ul>
-        <li>Please use chest instead of breast when talking about screening and don't use the phrase 'it will be over soon'.</li> <!-- needs to be populated from other pages-->
-      </ul>
+      <h2>Language preferences</h2>
+      {% if data['word-preference'] != null %}
+        <p>You told us you:</p>
+        <p>{{ data['word-preference'] or 'No text entered' }}</p>
+      {% else %}
+        <p>You have not set any language preferences</p>
+      {% endif %}
       <p><a href="choose-your-words" class="nhsuk-link">Change your language preferences</a></p>
      
-      
-      
-      
-      
-
-  
-
-
     </div>
   </div>
 {% endblock %}
